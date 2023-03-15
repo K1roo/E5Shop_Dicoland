@@ -130,7 +130,7 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
 
-  <img src="images/about-img.jpg" style="width:100%">
+  <img src="images/clever_lands.jpg" style="width:100%">
   <div class="text"></div>
 </div>
 
@@ -142,7 +142,13 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
 
-  <img src="images/about-img.jpg" style="width:130%">
+  <img src="images/the_happy_lemon.jpg" style="width:100%">
+
+</div>
+
+<div class="mySlides fade">
+
+  <img src="images/be_well_bee.jpg" style="width:100%">
 
 </div>
 
