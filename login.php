@@ -74,7 +74,7 @@ if(isset($message)){
       <h3>se connecter</h3>
       <input type="email" name="email" placeholder="enter your email" required class="box">
       <input type="password" name="password" placeholder="enter your password" required class="box">
-      <input type="submit" name="submit" value="login now" class="btn">
+      <input type="submit" name="submit" value="login" class="btn">
       <p> <a href="register.php">cree un compte</a></p>
    </form>
 
