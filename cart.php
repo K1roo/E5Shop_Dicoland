@@ -14,7 +14,7 @@ if(isset($_POST['update_cart'])){
    $cart_id = $_POST['cart_id'];
    $cart_quantity = $_POST['cart_quantity'];
    mysqli_query($conn, "UPDATE `cart` SET quantity = '$cart_quantity' WHERE id = '$cart_id'") or die('query failed');
-   $message[] = 'cart quantity updated!';
+   $message[] = 'Mise à jour terminée avec succès';
 }
 
 if(isset($_GET['delete'])){
@@ -41,7 +41,6 @@ if(isset($_GET['delete_all'])){
    <!-- cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-   <!-- css file  -->
    <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -94,7 +93,7 @@ if(isset($_GET['delete_all'])){
       <p>prix  <span><?php echo $grand_total; ?>€</span></p>
       <div class="flex">
          <a href="shop.php" class="option-btn"> page d'accueil</a>
-         <a href="checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">payer</a>
+         <a href="checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Passer au paiement </a>
       </div>
    </div>
 

@@ -39,10 +39,10 @@ if(isset($_POST['order_btn'])){
       $message[] = 'vide';
    }else{
       if(mysqli_num_rows($order_query) > 0){
-         $message[] = 'item deja placer'; 
+         $message[] = 'l_article existe deja '; 
       }else{
          mysqli_query($conn, "INSERT INTO `orders`(user_id, name, number, email, method, address, total_products, total_price, placed_on) VALUES('$user_id', '$name', '$number', '$email', '$method', '$address', '$total_products', '$cart_total', '$placed_on')") or die('query failed');
-         $message[] = 'successfully!';
+         $message[] = 'Commande passée avec succès';
          mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
       }
    }
@@ -87,7 +87,7 @@ if(isset($_POST['order_btn'])){
    <?php
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">le panier est vide</p>';
    }
    ?>
    <div class="grand-total"> Total <span> <?php echo $grand_total; ?>€</span> </div>
@@ -101,20 +101,20 @@ if(isset($_POST['order_btn'])){
       <div class="flex">
          <div class="inputBox">
             <span>Nom</span>
-            <input type="text" name="name" required placeholder="enter your name">
+            <input type="text" name="name" required placeholder="e.g. Bekhit Kirolos ">
          </div>
          <div class="inputBox">
             <span>Numero</span>
-            <input type="number" name="number" required placeholder="enter your number">
+            <input type="number" name="number" required placeholder="e.g. 0153987514">
          </div>
          <div class="inputBox">
             <span> Email :</span>
-            <input type="email" name="email" required placeholder="enter your email">
+            <input type="email" name="email" required placeholder="e.g. example@example.com">
          </div>
          <div class="inputBox">
             <span>Mode de paiement :</span>
             <select name="method">
-               <option value="cash on delivery">Espèces</option>
+               <option value="Espèces">Espèces</option>
                <option value="credit card">cartes bancaires</option>
                <option value="paypal">paypal</option>
             </select>
@@ -131,7 +131,7 @@ if(isset($_POST['order_btn'])){
 
          <div class="inputBox">
             <span>Adresse rue :</span>
-            <input type="text" name="city" required placeholder="">
+            <input type="text" name="city" required placeholder=" e.g. rue de paris">
          </div>
          <div class="inputBox">
             <span>Ville, Pays :</span>
@@ -139,10 +139,10 @@ if(isset($_POST['order_btn'])){
          </div>
          <div class="inputBox">
             <span>Code postal :</span>
-            <input type="number" min="0" name="pin_code" required placeholder="e.g. ">
+            <input type="number" min="0" name="pin_code" required placeholder="e.g. 75014 ">
          </div>
       </div>
-      <input type="submit" value="order now" class="btn" name="order_btn">
+      <input type="submit" value="Commandez maintenant" class="btn" name="order_btn">
    </form>
 
 </section>

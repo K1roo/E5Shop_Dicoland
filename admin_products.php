@@ -31,8 +31,7 @@ if(isset($_POST['add_product'])){
             $message[] = 'image size is too large';
          }else{
             move_uploaded_file($image_tmp_name, $image_folder);
-            $message[] = '
-            produit ajouté avec succès !';
+            $message[] = 'produit ajouté avec succès !';
          }
       }else{
          $message[] = 'le produit n a pas pu être ajouté !';
