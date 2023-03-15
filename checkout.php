@@ -58,7 +58,7 @@ if(isset($_POST['order_btn'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Checkout</title>
-
+   <!-- cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <link rel="stylesheet" href="css/style.css">
@@ -119,10 +119,11 @@ if(isset($_POST['order_btn'])){
                <option value="paypal">paypal</option>
             </select>
          </div>
-    <!--     <div class="inputBox">
+    <!--   test 04 : value pour l'adresse - ne utuliser pas eg flat xx  <div class="inputBox">
             <span>Adresse</span>
             <input type="number" min="0" name="flat" required placeholder="e.g. flat no.">
          </div> --> 
+
 <div class="inputBox">
             <span>Numero rue :</span>
             <input type="number" min="0" name="flat" required placeholder=" no.">
@@ -147,16 +148,8 @@ if(isset($_POST['order_btn'])){
 </section>
 
 
-
-
-
-
-
-
-
 <?php include 'footer.php'; ?>
 
-<!-- custom js file link  -->
 <script src="js/script.js"></script>
 
 </body>
