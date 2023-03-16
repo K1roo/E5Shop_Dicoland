@@ -23,7 +23,7 @@ if(isset($message)){
          <nav class="navbar">
             <a href="home.php">Accueil</a>
             <a href="shop.php">Livres</a>
-          <!-- FNC not ready yet -->  <!-- <a href="user_orders.php">Historique de commandes</a> -->
+            <a href="user_orders.php">Historique de commandes</a> 
             <a href="#blogs">Nos blogs</a>
         </nav>
 

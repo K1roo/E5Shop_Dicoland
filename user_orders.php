@@ -12,7 +12,6 @@ if(!isset($user_id)){
 
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,6 @@ if(!isset($user_id)){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <link rel="stylesheet" href="css/admin_style.css">
-   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -40,7 +38,7 @@ if(!isset($user_id)){
 
    <div class="box-container">
       <?php
-      $select_orders = mysqli_query($conn, "SELECT * FROM `orders` where user_id") or die('query failed');
+      $select_orders = mysqli_query($conn, "SELECT * FROM `orders` where user_id = $user_id") or die('query failed');
       if(mysqli_num_rows($select_orders) > 0){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
