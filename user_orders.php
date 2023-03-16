@@ -36,7 +36,7 @@ if(!isset($user_id)){
 
 <section class="orders">
 
-   <h1 class="title">Commandes passées</h1>
+   <h1 class="title">Historique des commandes</h1>
 
    <div class="box-container">
       <?php
