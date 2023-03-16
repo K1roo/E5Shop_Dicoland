@@ -10,8 +10,6 @@ if(!isset($user_id)){
    header('location:login.php');
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +20,12 @@ if(!isset($user_id)){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Commandes</title>
 
-   <!-- cdn link  -->
+   <!-- cdn et CSS link ** il faut avoir les 2 css files pour l'affichage correct des fnc dans cette page -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <link rel="stylesheet" href="css/admin_style.css">
+   
+   <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
@@ -68,7 +68,7 @@ if(!isset($user_id)){
 </section>
 
 
-<script src="js/admin_script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
