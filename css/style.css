@@ -63,8 +63,9 @@ section{
    top:0;
    margin:0 auto;
    max-width: 1200px;
-   background-color:#21a774;
+   background-color: #3990cd;
    padding:2rem;
+   border-radius: 18rem;
    display: flex;
    align-items: center;
    justify-content: space-between;

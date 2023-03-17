@@ -31,7 +31,7 @@
             <h3>Informations de contact</h3>
             <a href="#"> <i class="fas fa-phone"></i> +33 1 43 22 12 93 </a>
             <a href="#"> <i class="fas fa-envelope"></i> Contacts@dicoland.fr </a>
-            <img src="image/worldmap.png" class="map" alt="">
+            <img src="images/worldmap.png" class="map" alt="">
         </div>
         
     </div>
