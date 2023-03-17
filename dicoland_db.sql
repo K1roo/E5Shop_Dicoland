@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 15 mars 2023 à 14:46
+-- Généré le : ven. 17 mars 2023 à 00:31
 -- Version du serveur :  5.7.11
--- Version de PHP : 8.0.3
+-- Version de PHP : 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,15 @@ CREATE TABLE `cart` (
   `quantity` int(100) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `cart`
+--
+
+INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `quantity`, `image`) VALUES
+(70, 3, 'livre 2', 60, 1, 'be_well_bee.jpg'),
+(71, 3, 'livre 1 ', 30, 1, 'book-4.png'),
+(72, 3, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,7 +85,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
-(11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'pending');
+(11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'pending'),
+(12, 3, 'kirolos user 2', '014487665', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 63 , rue de paris, Paris, France - 75017', ', livre 2 (6) , livre 3  (4) ', 420, '16-Mar-2023', 'pending'),
+(13, 3, 'kirolos_user', '109996611', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 98 , rue de paris, Paris,France - 75019', ', livre 5 (4) ', 72, '16-Mar-2023', 'pending'),
+(14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending');
 
 -- --------------------------------------------------------
 
@@ -167,7 +179,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT pour la table `message`
@@ -179,7 +191,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT pour la table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `products`
