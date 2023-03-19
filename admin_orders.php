@@ -78,7 +78,7 @@ if(isset($_GET['delete'])){
       <?php
          }
       }else{
-         echo '<p class="empty">pas de commande a afficher :/</p>';
+         echo '<p class="empty">Pas de commande a afficher :/</p>';
       }
       ?>
    </div>

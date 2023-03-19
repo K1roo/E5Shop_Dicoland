@@ -28,7 +28,7 @@ if(isset($_POST['add_product'])){
 
       if($add_product_query){
          if($image_size > 2000000){
-            $message[] = 'image size is too large';
+            $message[] = 'fail - image > 2000000 ko ';
          }else{
             move_uploaded_file($image_tmp_name, $image_folder);
             $message[] = 'produit ajouté avec succès !';
@@ -134,7 +134,7 @@ if(isset($_POST['update_product'])){
       <?php
          }
       }else{
-         echo '<p class="empty">pas encore de produits créés </p>';
+         echo '<p class="empty">Pas encore de produits créés </p>';
       }
       ?>
    </div>
@@ -169,7 +169,6 @@ if(isset($_POST['update_product'])){
    ?>
 
 </section>
-
 
 <script src="js/admin_script.js"></script>
 

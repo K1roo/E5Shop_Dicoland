@@ -82,7 +82,7 @@ if(isset($_POST['add_to_cart'])){
    <?php
             }
          }else{
-            echo '<p class="empty">no result found!</p>';
+            echo '<p class="empty">Aucun résultat trouvé!</p>';
          }
       }else{
          echo '<p class="empty">Pas de recherce lancée! </p>';

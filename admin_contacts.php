@@ -38,7 +38,7 @@ if(isset($_GET['delete'])){
 
 <section class="messages">
 
-   <h1 class="title"> Communications </h1>
+   <h1 class="title"> Messages reçus </h1>
 
    <div class="box-container">
    <?php
@@ -64,8 +64,6 @@ if(isset($_GET['delete'])){
    </div>
 
 </section>
-
-
 
 <script src="js/admin_script.js"></script>
 

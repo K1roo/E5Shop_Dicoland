@@ -118,7 +118,7 @@ if(!isset($admin_id)){
             $number_of_messages = mysqli_num_rows($select_messages);
          ?>
          <h3><?php echo $number_of_messages; ?></h3>
-         <p>Message reçu</p>
+         <p>Messages reçus</p>
       </div>
 
    </div>
