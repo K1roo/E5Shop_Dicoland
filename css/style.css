@@ -862,16 +862,6 @@ section{
    background-color: var(--light-bg);
    border-radius: .5rem;
 }
-
-
-
-
-
-
-
-
- 
-
 .footer{
    background-color: var(--light-bg);
 }
@@ -922,11 +912,6 @@ section{
 .footer .credit span{
    color:var(--purple);
 }
-
-
-
-
-/* media queries  */
 
 @media (max-width:991px){
 
