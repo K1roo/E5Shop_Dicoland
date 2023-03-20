@@ -1,5 +1,13 @@
 
 
+
+Pour lancer le site - utulisez Uwamp - git clone le repo dans le fichier WWW ensuite créer et ajoutez la BDD dans votre mysql phpmyadmin 
+sous le nom de " dicoland_db " ensuite faite un import du fichier de la BDD qui se trouve dans le repo colné. 
+
+ensuite lancer le navigateur WWW de Uwamp -> E5Shop_Dicoland -> home.php 
+
+connectez vous avec les id et mdp : 
+
 login admin : email -  kirolos@admin.com 
               password - 1234
 
@@ -7,3 +15,7 @@ login admin : email -  kirolos@admin.com
 
 login user : email -  kirolos@user.com 
               password - 1234
+
+
+
+ enjooooy :) 
