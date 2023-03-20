@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 17 mars 2023 à 00:31
+-- Généré le : lun. 20 mars 2023 à 16:01
 -- Version du serveur :  5.7.11
 -- Version de PHP : 7.2.7
 
@@ -60,6 +60,14 @@ CREATE TABLE `message` (
   `message` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `message`
+--
+
+INSERT INTO `message` (`id`, `user_id`, `name`, `email`, `number`, `message`) VALUES
+(10, 3, 'kirolos', 'kirolos@user.com', '012200924', 'Bonjour ceci est un test du formulaire'),
+(11, 1, 'kirolos', 'kirolos@useer.com', '012388746', 'bonjour test test - 01 ');
+
 -- --------------------------------------------------------
 
 --
@@ -85,10 +93,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
-(11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'pending'),
-(12, 3, 'kirolos user 2', '014487665', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 63 , rue de paris, Paris, France - 75017', ', livre 2 (6) , livre 3  (4) ', 420, '16-Mar-2023', 'pending'),
+(11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'completed'),
+(12, 3, 'kirolos user 2', '014487665', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 63 , rue de paris, Paris, France - 75017', ', livre 2 (6) , livre 3  (4) ', 420, '16-Mar-2023', 'completed'),
 (13, 3, 'kirolos_user', '109996611', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 98 , rue de paris, Paris,France - 75019', ', livre 5 (4) ', 72, '16-Mar-2023', 'pending'),
-(14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending');
+(14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending'),
+(15, 1, 'kirolos', '014489654', 'kirolos@user.com', 'paypal', 'Le 3 , rue du docteur finlay, Paris, France - 75015', ', livre 4 (2) , livre 5 (3) ', 64, '20-Mar-2023', 'pending');
 
 -- --------------------------------------------------------
 
@@ -112,7 +121,8 @@ INSERT INTO `products` (`id`, `name`, `price`, `image`) VALUES
 (2, 'livre 2', 60, 'be_well_bee.jpg'),
 (3, 'livre 3 ', 15, 'the_girl_of_ink_and_stars.jpg'),
 (4, 'livre 4', 5, 'clever_lands.jpg'),
-(5, 'livre 5', 18, 'book-2.png');
+(5, 'livre 5', 18, 'book-2.png'),
+(6, 'livre 6', 10, 'the_happy_lemon.jpg');
 
 -- --------------------------------------------------------
 
@@ -179,25 +189,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `users`
