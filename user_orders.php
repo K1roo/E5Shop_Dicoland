@@ -10,6 +10,12 @@ if(!isset($user_id)){
    header('location:login.php');
 }
 
+if(isset($_GET['delete'])){
+   $delete_id = $_GET['delete'];
+   mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'") or die('query failed');
+   header('location:user_orders.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +60,7 @@ if(!isset($user_id)){
          <p> Mode de paiement : <span><?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-            <a href="admin_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a>
+            <a href="user_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a>
          </form>
       </div>
       <?php
