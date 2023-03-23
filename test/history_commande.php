@@ -13,7 +13,7 @@ if(!isset($user_id)){
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
    mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'") or die('query failed');
-   header('location:user_orders.php');
+   header('location:history_commande.php');
 }
 
 ?>
@@ -51,7 +51,7 @@ if(isset($_GET['delete'])){
       <div class="box">
          <p> User id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
          <p> Commande passée le : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-         <p> Commande id : <span> # <?php echo $fetch_orders['id']; ?></span> </p>
+         <p> Commande id : <span><?php echo $fetch_orders['id']; ?></span> </p>
          <p> Nom : <span><?php echo $fetch_orders['name']; ?></span> </p>
          <p> Numero : <span><?php echo $fetch_orders['number']; ?></span> </p>
          <p> Email : <span><?php echo $fetch_orders['email']; ?></span> </p>
@@ -61,13 +61,13 @@ if(isset($_GET['delete'])){
          <p> Mode de paiement : <span><?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-            <a href="user_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a>
+            <a href="history_commande.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a>
          </form>
       </div>
       <?php
          }
       }else{
-         echo '<p class="empty">Pas de commande en cours de TRAITEMENT :/ </p>';
+         echo '<p class="empty">pas de commande effectuer :/</p>';
       }
       ?>
    </div>
@@ -87,7 +87,7 @@ if(isset($_GET['delete'])){
       <div class="box">
          <p> User id : <span><?php echo $fetch_orders['user_id']; ?></span> </p>
          <p> Commande passée le : <span><?php echo $fetch_orders['placed_on']; ?></span> </p>
-         <p> Commande id : <span> # <?php echo $fetch_orders['id']; ?></span> </p>
+         <p> Commande id : <span><?php echo $fetch_orders['id']; ?></span> </p>
          <p> Nom : <span><?php echo $fetch_orders['name']; ?></span> </p>
          <p> Numero : <span><?php echo $fetch_orders['number']; ?></span> </p>
          <p> Email : <span><?php echo $fetch_orders['email']; ?></span> </p>
@@ -99,7 +99,7 @@ if(isset($_GET['delete'])){
       <?php
          }
       }else{
-         echo '<p class="empty">Pas de commande TRAITÉ :/ </p>';
+         echo '<p class="empty">pas de commande effectuer :/</p>';
       }
       ?>
    </div>
@@ -114,4 +114,4 @@ if(isset($_GET['delete'])){
 </html>
 
 
-<!-- Pas besoin pour le moment - j'utulise un autre fetch <a href="history_commande.php?delete= < ? php echo $fetch_orders["where payment_status='PENDING'"]; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a> -->
+<!--  <a href="history_commande.php?delete= < ? php echo $fetch_orders["where payment_status='PENDING'"]; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a> -->
