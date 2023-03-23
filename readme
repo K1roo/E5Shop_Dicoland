@@ -1,24 +1,56 @@
+🟦🟦🟦⬜⬜⬜⬜⬜⬜🟥🟥🟥                      
+🟦🟦🟦⬜⬜⬜⬜⬜⬜🟥🟥🟥                                    FR 
+🟦🟦🟦⬜⬜⬜⬜⬜⬜🟥🟥🟥
+🟦🟦🟦⬜⬜⬜⬜⬜⬜🟥🟥🟥
+🟦🟦🟦⬜⬜⬜⬜⬜⬜🟥🟥🟥
+
+💻 Pour lancer le site - utulisez Uwamp - git clone le repo -> https://github.com/K1roo/E5Shop_Dicoland dans le fichier WWW ensuite créer et ajoutez la BDD dans votre mysql phpmyadmin 
+sous le nom de " dicoland_db " ensuite faite un import du fichier de la BDD qui se trouve dans le repo cloné. 
+
+🆕🔴 Lancez le navigateur WWW de Uwamp -> E5Shop_Dicoland -> login.php 
+
+connectez vous avec les id et mdp : 
+
+🏸 login admin : email -  kirolos@admin.com 
+              password - 1234
+
+👤 login user : email -  kirolos@user.com 
+              password - 1234
+            
+👤 login user 2 : email -  kirolos@user2.com 
+              password - 1234
+
+ enjooooy 😀      
+
+
+🟦🟦🟦🟦🟦🟦🟦🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+🟦⬜⬜⬜⬜⬜🟦⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜                  EN
+🟦⬜⬜⬜⬜⬜🟦🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+🟦⬜⬜⬜⬜⬜🟦⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+🟦🟦🟦🟦🟦🟦🟦🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥🟥
+
+💻 To launch the site - use Uwamp - 🌀 git clone the repo -> " https://github.com/K1roo/E5Shop_Dicoland  " in the WWW file then create and create the DB in your mysql phpmyadmin
+under the name "dicoland_db" then imports the database file that is in the cloned repository.
+
+🆕 🔴 Launch the WWW browser of Uwamp -> E5Shop_Dicoland -> login.php
+
+Log in with the following id and password:
+
+🏸 admin login: email - kirolos@admin.com
+password - 1234
 
 
 
-Pour lancer le site - utulisez Uwamp - git clone le repo -> https://github.com/K1roo/E5Shop_Dicoland dans le fichier WWW ensuite créer et ajoutez la BDD dans votre mysql phpmyadmin 
-sous le nom de " dicoland_db " ensuite faite un import du fichier de la BDD qui se trouve dans le repo cloné. 
-
-ensuite lancer le navigateur WWW de Uwamp -> E5Shop_Dicoland -> login.php 
-
-connectez vous avec les id et mdp : 
-
-login admin : email -  kirolos@admin.com 
-              password - 1234
-
-              
-
-login user : email -  kirolos@user.com 
-              password - 1234
-              
-    
-login user 2 : email -  kirolos@user2.com 
-              password - 1234
+👤 login user: email - kirolos@user.com
+password - 1234
 
 
- enjooooy :) 
+👤 login user 2: email - kirolos@user2.com
+password - 1234
+
+
+Treat yourself 😀
