@@ -13,7 +13,7 @@ if(!isset($user_id)){
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];
    mysqli_query($conn, "DELETE FROM `orders` WHERE id = '$delete_id'") or die('query failed');
-   header('location:user_orders.php');
+   header('location:history_commande.php');
 }
 
 ?>
@@ -24,7 +24,7 @@ if(isset($_GET['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Commandes</title>
+   <title>Historique des commandes</title>
 
    <!-- cdn et CSS link ** il faut avoir les 2 css files pour l'affichage correct des fnc dans cette page -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,11 +40,11 @@ if(isset($_GET['delete'])){
 
 <section class="orders">
 
-   <h1 class="title">Les commandes en cours</h1>
+   <h1 class="title">Historique des commandes</h1>
 
    <div class="box-container">
       <?php
-      $select_orders = mysqli_query($conn, "SELECT * FROM `orders` where user_id = $user_id AND payment_status ='PENDING'") or die('query failed');
+      $select_orders = mysqli_query($conn, "SELECT * FROM `orders` where user_id = $user_id") or die('query failed');
       if(mysqli_num_rows($select_orders) > 0){
          while($fetch_orders = mysqli_fetch_assoc($select_orders)){
       ?>
@@ -60,13 +60,12 @@ if(isset($_GET['delete'])){
          <p> Mode de paiement : <span><?php echo $fetch_orders['method']; ?></span> </p>
          <form action="" method="post">
             <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">
-            <a href="user_orders.php?delete=<?php echo $fetch_orders['id']; ?>" onclick="return confirm('Voulez vous supprimer la commande ?');" class="delete-btn">Supprimer</a>
          </form>
       </div>
       <?php
          }
       }else{
-         echo '<p class="empty">pas de commande en cours :/</p>';
+         echo '<p class="empty">pas de commande effectuer :/</p>';
       }
       ?>
    </div>
