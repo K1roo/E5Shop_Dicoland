@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 20 mars 2023 à 16:01
+-- Généré le : jeu. 23 mars 2023 à 14:44
 -- Version du serveur :  5.7.11
 -- Version de PHP : 7.2.7
 
@@ -43,7 +43,10 @@ CREATE TABLE `cart` (
 INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `quantity`, `image`) VALUES
 (70, 3, 'livre 2', 60, 1, 'be_well_bee.jpg'),
 (71, 3, 'livre 1 ', 30, 1, 'book-4.png'),
-(72, 3, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg');
+(72, 3, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg'),
+(74, 1, 'livre 1 ', 30, 1, 'book-4.png'),
+(75, 1, 'livre 2', 60, 1, 'be_well_bee.jpg'),
+(76, 1, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg');
 
 -- --------------------------------------------------------
 
@@ -95,7 +98,6 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
 (11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'completed'),
 (12, 3, 'kirolos user 2', '014487665', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 63 , rue de paris, Paris, France - 75017', ', livre 2 (6) , livre 3  (4) ', 420, '16-Mar-2023', 'completed'),
-(13, 3, 'kirolos_user', '109996611', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 98 , rue de paris, Paris,France - 75019', ', livre 5 (4) ', 72, '16-Mar-2023', 'pending'),
 (14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending'),
 (15, 1, 'kirolos', '014489654', 'kirolos@user.com', 'paypal', 'Le 3 , rue du docteur finlay, Paris, France - 75015', ', livre 4 (2) , livre 5 (3) ', 64, '20-Mar-2023', 'pending');
 
@@ -189,7 +191,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT pour la table `message`
