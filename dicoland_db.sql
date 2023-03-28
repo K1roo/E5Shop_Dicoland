@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : jeu. 23 mars 2023 à 14:44
+-- Généré le : mar. 28 mars 2023 à 22:24
 -- Version du serveur :  5.7.11
 -- Version de PHP : 7.2.7
 
@@ -45,7 +45,6 @@ INSERT INTO `cart` (`id`, `user_id`, `name`, `price`, `quantity`, `image`) VALUE
 (71, 3, 'livre 1 ', 30, 1, 'book-4.png'),
 (72, 3, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg'),
 (74, 1, 'livre 1 ', 30, 1, 'book-4.png'),
-(75, 1, 'livre 2', 60, 1, 'be_well_bee.jpg'),
 (76, 1, 'livre 3 ', 15, 1, 'the_girl_of_ink_and_stars.jpg');
 
 -- --------------------------------------------------------
@@ -98,8 +97,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `user_id`, `name`, `number`, `email`, `method`, `address`, `total_products`, `total_price`, `placed_on`, `payment_status`) VALUES
 (11, 1, 'kirolos_user', '0148595431', 'kirolos@user.com', 'cash on delivery', 'appartement 69 , Rue de Turbigo, Paris, France - 75003', ', livre 2 (1) , livre 1  (1) ', 90, '15-Mar-2023', 'completed'),
 (12, 3, 'kirolos user 2', '014487665', 'kirolos@user2.com', 'EspÃ¨ces', 'appartement 63 , rue de paris, Paris, France - 75017', ', livre 2 (6) , livre 3  (4) ', 420, '16-Mar-2023', 'completed'),
-(14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending'),
-(15, 1, 'kirolos', '014489654', 'kirolos@user.com', 'paypal', 'Le 3 , rue du docteur finlay, Paris, France - 75015', ', livre 4 (2) , livre 5 (3) ', 64, '20-Mar-2023', 'pending');
+(14, 3, 'kirolos_user2', '12354894', 'kirolos@user2.com', 'paypal', 'appartement 21 , rue de paris, Paris, France - 75011', ', livre 2 (1) ', 60, '16-Mar-2023', 'pending');
 
 -- --------------------------------------------------------
 
@@ -137,17 +135,20 @@ CREATE TABLE `users` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `user_type` varchar(20) NOT NULL DEFAULT 'user'
+  `user_type` varchar(20) NOT NULL DEFAULT 'user',
+  `reset_token` varchar(255) DEFAULT NULL,
+  `password_changed` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(1, 'kirolos_user', 'kirolos@user.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user'),
-(2, 'kirolos_admin', 'kirolos@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin'),
-(3, 'kirolos_user2', 'kirolos@user2.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `reset_token`, `password_changed`) VALUES
+(1, 'kirolos_user', 'kirolos@user.com', '6f3f8e148045a3aaca12495f95d8740f', 'user', NULL, 0),
+(2, 'kirolos_admin', 'kirolos@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', NULL, 0),
+(3, 'kirolos_user2', 'kirolos@user2.com', 'cbca549dd6360505780f290ffbe4e4a9', 'user', NULL, 0),
+(4, 'Kiro', 'kiromaher625@gmail.com', '6b61d6c354fe32af0524b675d5f08816', 'user', NULL, 1);
 
 --
 -- Index pour les tables déchargées
@@ -203,7 +204,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT pour la table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `products`
@@ -215,7 +216,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

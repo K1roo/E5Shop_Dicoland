@@ -2,32 +2,41 @@
 
 include 'config.php';
 session_start();
-
 if(isset($_POST['submit'])){
 
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+   $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
 
       $row = mysqli_fetch_assoc($select_users);
 
-      if($row['user_type'] == 'admin'){
+      if(password_verify($password, $row['password'])){
 
-         $_SESSION['admin_name'] = $row['name'];
-         $_SESSION['admin_email'] = $row['email'];
-         $_SESSION['admin_id'] = $row['id'];
-         header('location:admin_page.php');
+         if($row['user_type'] == 'admin'){
 
-      }elseif($row['user_type'] == 'user'){
+            $_SESSION['admin_name'] = $row['name'];
+            $_SESSION['admin_email'] = $row['email'];
+            $_SESSION['admin_id'] = $row['id'];
+            header('location:admin_page.php');
 
-         $_SESSION['user_name'] = $row['name'];
-         $_SESSION['user_email'] = $row['email'];
-         $_SESSION['user_id'] = $row['id'];
-         header('location:home.php');
+         }elseif($row['user_type'] == 'user'){
 
+            $_SESSION['user_name'] = $row['name'];
+            $_SESSION['user_email'] = $row['email']; $_SESSION['password_changed'] = true;
+            $_SESSION['user_id'] = $row['id'];
+            if (isset($_SESSION['password_changed']) && $_SESSION['password_changed'] == true) {
+               // Si le mot de passe a été changé récemment, on affiche le formulaire de changement de mot de passe
+               header('location:update_password.php');
+            } else {
+               header('location:home.php');
+            }
+         }
+
+      }else{
+         $message[] = 'Mot de passe incorrect';
       }
 
    }else{
