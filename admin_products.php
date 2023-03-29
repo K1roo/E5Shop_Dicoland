@@ -31,7 +31,8 @@ if(isset($_POST['add_product'])){
             $message[] = 'fail - image > 2000000 ko ';
          }else{
             move_uploaded_file($image_tmp_name, $image_folder);
-            $message[] = 'produit ajouté avec succès !';
+            $message[] = '
+            produit ajouté avec succès !';
          }
       }else{
          $message[] = 'le produit n a pas pu être ajouté !';
@@ -108,7 +109,7 @@ if(isset($_POST['update_product'])){
       <input type="text" name="name" class="box" placeholder="nom du produit" required>
       <input type="number" min="0" name="price" class="box" placeholder="prix du produit" required>
       <input type="file" name="image" accept="image/jpg, image/jpeg, image/png" class="box" required>
-      <input type="submit" value="ajouter le produit" name="add_product" class="btn">
+      <input type="submit" value="add product" name="add_product" class="btn">
    </form>
 
 </section>
@@ -155,10 +156,10 @@ if(isset($_POST['update_product'])){
       <input type="hidden" name="update_old_image" value="<?php echo $fetch_update['image']; ?>">
       <img src="uploaded_img/<?php echo $fetch_update['image']; ?>" alt="">
       <input type="text" name="update_name" value="<?php echo $fetch_update['name']; ?>" class="box" required placeholder="enter product name">
-      <input type="number" name="mettre a jour le prix" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
+      <input type="number" name="update_price" value="<?php echo $fetch_update['price']; ?>" min="0" class="box" required placeholder="enter product price">
       <input type="file" class="box" name="update_image" accept="image/jpg, image/jpeg, image/png">
-      <input type="submit" value="mettre a jour" name="update_product" class="btn">
-      <input type="reset" value="annuler" id="close-update" class="option-btn">
+      <input type="submit" value="update" name="update_product" class="btn">
+      <input type="reset" value="cancel" id="close-update" class="option-btn">
    </form>
    <?php
          }
@@ -169,6 +170,12 @@ if(isset($_POST['update_product'])){
    ?>
 
 </section>
+
+
+
+
+
+
 
 <script src="js/admin_script.js"></script>
 
