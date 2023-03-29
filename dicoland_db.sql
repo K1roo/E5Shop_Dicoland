@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 29 mars 2023 à 00:07
+-- Généré le : mer. 29 mars 2023 à 13:04
 -- Version du serveur :  5.7.11
--- Version de PHP : 7.2.7
+-- Version de PHP : 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `dicoland_db`
+-- Base de données : `db_test`
 --
 
 -- --------------------------------------------------------
@@ -145,9 +145,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `reset_token`, `password_changed`) VALUES
-(1, 'kirolos_userr', 'kirolos@user.com', '$2y$10$Aj3KsimkWM/oXwXg5M0tKehhAlBdUxXr8vCmSI.0cd2TYNsfcxnJa', 'user', NULL, 0),
+(1, 'kirolos_userr', 'kirolos@user.com', '$2y$10$LDQBjOIabCDWyir8fmLcg.K2W0O5PF5Rb4MBbFjxu4bkb2vjYn7Su', 'user', NULL, 0),
 (2, 'kirolos_admin', 'kirolos@admin.com', '$2y$10$IeL0/LMgYzzIrK2hPefXeOMyYzL.7c6UarqwiGCqr/tk04Zi6/kFi', 'admin', NULL, 0),
-(3, 'kirolos_user2', 'kirolos@user2.com', 'cbca549dd6360505780f290ffbe4e4a9', 'user', NULL, 0),
+(3, 'kirolos_user2', 'kirolos@user2.com', '$2y$10$siCHk0GLx4FhipecoAlISu1pksXsdNXqTKYLelvFSpKoOmRNFJ8yW', 'user', NULL, 0),
 (4, 'Kiro', 'kiromaher625@gmail.com', '$2y$10$HBOd.S96JQ4L6f./BuYB7O.sbqN8hcY.LUqFLkOBhQx1gPePsM2E6', 'user', NULL, 1);
 
 --

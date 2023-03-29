@@ -6,23 +6,21 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($conn,$query);
     $row = mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result) == 1){
-        $newPassword = bin2hex(random_bytes(6)); // génération du nouveau mot de passe aléatoire
-        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); // hashage du mot de passe
+        $newPassword = bin2hex(random_bytes(6)); // generate new random password
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
         $query = "UPDATE users SET password = '$hashedPassword' WHERE email = '$email'";
-        // Après avoir mis à jour le mot de passe de l'utilisateur avec succès
+        // After successfully updating the user's password
         $_SESSION['password_changed'] = true;
-        
 
         mysqli_query($conn,$query);
-        echo "Votre nouveau mot de passe est : " . $newPassword; // afficher le nouveau mot de passe
-
-
+        echo "Your new password is: " . $newPassword; // display the new password
 
     } else {
-        echo "Adresse e-mail invalide.";
+        echo "Invalid email address.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 
