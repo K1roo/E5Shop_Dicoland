@@ -55,42 +55,57 @@ if(isset($_POST['add_to_cart'])){
 <section class="search-form">
    <form action="" method="post">
       <input type="text" name="search" placeholder="ex. Livre 1" class="box">
+      <select name="price_filter">
+         <option value="">Tous les prix</option>
+         <option value="0-50">Moins de 50€</option>
+         <option value="50-100">Entre 50€ et 100€</option>
+         <option value="100+">Plus de 100€</option>
+      </select>
       <input type="submit" name="submit" value="lancer la recherche " class="btn">
    </form>
 </section>
 
-<section class="products" style="padding-top: 0;">
 
+<section class="products" style="padding-top: 0;">
    <div class="box-container">
    <?php
-      if(isset($_POST['submit'])){
-         $search_item = $_POST['search'];
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE name LIKE '%{$search_item}%'") or die('query failed');
-         if(mysqli_num_rows($select_products) > 0){
+   if(isset($_POST['submit'])){
+      $search_item = $_POST['search'];
+      $price_filter = $_POST['price_filter'];
+      $price_filter_query = '';
+      if(!empty($price_filter)){
+         if($price_filter == '0-50'){
+            $price_filter_query = 'AND price < 50';
+         }elseif($price_filter == '50-100'){
+            $price_filter_query = 'AND price >= 50 AND price < 100';
+         }elseif($price_filter == '100+'){
+            $price_filter_query = 'AND price >= 100';
+         }
+      }
+      $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE name LIKE '%{$search_item}%' $price_filter_query") or die('query failed');
+      if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
    ?>
-   <form action="" method="post" class="box">
-      <img src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
-      <div class="name"><?php echo $fetch_product['name']; ?></div>
-      <div class="price"><?php echo $fetch_product['price']; ?>€</div>
-      <input type="number"  class="qty" name="product_quantity" min="1" value="1">
-      <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
-      <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-      <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
-      <input type="submit" class="btn" value="ajouter" name="add_to_cart">
-   </form>
+            <form action="" method="post" class="box">
+               <img src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
+               <div class="name"><?php echo $fetch_product['name']; ?></div>
+               <div class="price"><?php echo $fetch_product['price']; ?>€</div>
+               <input type="number"  class="qty" name="product_quantity" min="1" value="1">
+               <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+               <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+               <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+               <input type="submit" class="btn" value="ajouter" name="add_to_cart">
+            </form>
    <?php
-            }
-         }else{
-            echo '<p class="empty">Aucun résultat trouvé!</p>';
          }
       }else{
-         echo '<p class="empty">Pas de recherce lancée! </p>';
+         echo '<p class="empty">Aucun résultat trouvé!</p>';
       }
+   }else{
+      echo '<p class="empty">Pas de recherche lancée! </p>';
+   }
    ?>
    </div>
-  
-
 </section>
 
 
