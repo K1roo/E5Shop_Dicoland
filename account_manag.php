@@ -14,9 +14,9 @@ if(isset($_POST['update'])){
    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
    $update_user = mysqli_query($conn, "UPDATE `users` SET `name`='$name', `email`='$email', `password`='$hashedPassword' WHERE `id`='$user_id'") or die('query failed');
    if($update_user){
-      echo '<script>alert("User info updated successfully!");</script>';
+      echo '<script>alert("Mis à jour bien enregistrer");</script>';
    } else {
-      echo '<script>alert("Error: failed to update user info.");</script>';
+      echo '<script>alert("Error: failed");</script>';
    }
 }
 
