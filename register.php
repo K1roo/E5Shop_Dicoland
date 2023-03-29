@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
    if(mysqli_num_rows($select_users) > 0){
       $message[] = 'L_adresse email existe déjà!';
    }else{
-      if($pass != $cpass){
+      if(!password_verify($pass, $cpass)){
          $message[] = 'Le mot de passe ne correspond pas';
       }else{
          mysqli_query($conn, "INSERT INTO `users`(name, email, password, user_type) VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
