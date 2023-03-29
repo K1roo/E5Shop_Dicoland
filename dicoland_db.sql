@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 28 mars 2023 à 22:24
+-- Généré le : mer. 29 mars 2023 à 00:07
 -- Version du serveur :  5.7.11
 -- Version de PHP : 7.2.7
 
@@ -145,10 +145,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `reset_token`, `password_changed`) VALUES
-(1, 'kirolos_user', 'kirolos@user.com', '6f3f8e148045a3aaca12495f95d8740f', 'user', NULL, 0),
-(2, 'kirolos_admin', 'kirolos@admin.com', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', NULL, 0),
+(1, 'kirolos_userr', 'kirolos@user.com', '$2y$10$Aj3KsimkWM/oXwXg5M0tKehhAlBdUxXr8vCmSI.0cd2TYNsfcxnJa', 'user', NULL, 0),
+(2, 'kirolos_admin', 'kirolos@admin.com', '$2y$10$IeL0/LMgYzzIrK2hPefXeOMyYzL.7c6UarqwiGCqr/tk04Zi6/kFi', 'admin', NULL, 0),
 (3, 'kirolos_user2', 'kirolos@user2.com', 'cbca549dd6360505780f290ffbe4e4a9', 'user', NULL, 0),
-(4, 'Kiro', 'kiromaher625@gmail.com', '6b61d6c354fe32af0524b675d5f08816', 'user', NULL, 1);
+(4, 'Kiro', 'kiromaher625@gmail.com', '$2y$10$HBOd.S96JQ4L6f./BuYB7O.sbqN8hcY.LUqFLkOBhQx1gPePsM2E6', 'user', NULL, 1);
 
 --
 -- Index pour les tables déchargées

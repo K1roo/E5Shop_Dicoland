@@ -8,7 +8,6 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result) == 1){
         $newPassword = bin2hex(random_bytes(6)); // génération du nouveau mot de passe aléatoire
         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT); // hashage du mot de passe
-        $hashedPassword = md5($newPassword);
         $query = "UPDATE users SET password = '$hashedPassword' WHERE email = '$email'";
         // Après avoir mis à jour le mot de passe de l'utilisateur avec succès
         $_SESSION['password_changed'] = true;
@@ -24,6 +23,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
